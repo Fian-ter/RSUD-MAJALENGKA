@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrasi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+  </head>
+  <body class="flex justify-center items-center h-screen bg-gray-100">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+      <h2 class="text-2xl font-bold text-center mb-2">REGISTRASI</h2>
+      <p class="text-sm text-center text-gray-600 mb-4">
+        Silahkan isi data di bawah untuk registrasi akun
+      </p>
+      <form onsubmit="return validateForm()">
+        <!-- Input untuk email -->
+        <div class="mb-4">
+          <label class="block text-gray-700">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="email"
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+            required
+          />
+        </div>
+        <!-- Input untuk password -->
+        <div class="mb-4">
+          <label class="block text-gray-700">sandi</label>
+          <input
+            type="sandi"
+            id="sandi"
+            placeholder="sandi"
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+            required
+          />
+        </div>
+        <!-- Input untuk konfirmasi password -->
+        <div class="mb-4">
+          <label class="block text-gray-700">Ulangi Password</label>
+          <input
+            type="sandi"
+            id="Ulangisandi"
+            placeholder=""
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+            required
+          />
+        </div>
+        <!-- Informasi tentang syarat dan ketentuan -->
+        <p class="text-xs text-gray-500 mb-4">
+          Dengan membuat akun, anda mengikuti ketentuan kami
+          <span class="text-blue-500">Terms & Privacy</span>
+        </p>
+        <!-- Tombol untuk submit formulir -->
+        <button
+          type="submit"
+          class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-200"
+        >
+          Daftar
+        </button>
+        <!-- Link ke halaman login jika sudah memiliki akun -->
+        <p class="text-xs text-gray-500 mb-4 text-center">
+          Sudah punya akun?
+          <span class="text-blue-500">login</span>
+        </p>
+      </form>
+    </div>
+
+    <script>
+      // Fungsi untuk memvalidasi password dan konfirmasi password sebelum submit
+      function validateForm() {
+        var password = document.getElementById("password").value; // Ambil nilai password
+        var confirmPassword = document.getElementById("confirmPassword").value; // Ambil nilai konfirmasi password
+
+        // Periksa apakah password dan konfirmasi password sama
+        if (password !== confirmPassword) {
+          alert("Password tidak cocok!"); // Tampilkan pesan kesalahan jika tidak cocok
+          return false; // Gagalkan submit formulir
+        }
+
+        alert("Registrasi berhasil!"); // Tampilkan pesan sukses jika validasi berhasil
+        return true; // Lanjutkan proses submit
+      }
+    </script>
+  </body>
+</html>

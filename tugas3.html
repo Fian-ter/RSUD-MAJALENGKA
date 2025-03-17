@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrasi</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+  <body
+    class="d-flex justify-content-center align-items-center vh-100 bg-light"
+  >
+    <div class="bg-white p-4 rounded shadow-lg w-50">
+      <h2 class="text-center mb-3">REGISTRASI</h2>
+      <p class="text-center text-muted mb-4">
+        Silahkan isi data di bawah untuk registrasi akun
+      </p>
+      <form onsubmit="return validateForm()">
+        <!-- Input untuk email -->
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            placeholder="Masukkan email"
+            required
+          />
+        </div>
+        <!-- Input untuk password -->
+        <div class="mb-3">
+          <label class="form-label">Sandi</label>
+          <input
+            type="password"
+            id="sandi"
+            class="form-control"
+            placeholder="Masukkan sandi"
+            required
+          />
+        </div>
+        <!-- Input untuk konfirmasi password -->
+        <div class="mb-3">
+          <label class="form-label">Ulangi Sandi</label>
+          <input
+            type="password"
+            id="Ulangisandi"
+            class="form-control"
+            placeholder="Masukkan ulang sandi"
+            required
+          />
+        </div>
+        <!-- Informasi tentang syarat dan ketentuan -->
+        <p class="text-muted text-center small">
+          Dengan membuat akun, anda mengikuti ketentuan kami
+          <span class="text-primary">Terms & Privacy</span>
+        </p>
+        <!-- Tombol untuk submit formulir -->
+        <button type="submit" class="btn btn-primary w-100">Daftar</button>
+        <!-- Link ke halaman login jika sudah memiliki akun -->
+        <p class="text-center text-muted mt-3 small">
+          Sudah punya akun? <span class="text-primary">Login</span>
+        </p>
+      </form>
+    </div>
+    <script>
+      function validateForm() {
+        var password = document.getElementById("sandi").value;
+        var confirmPassword = document.getElementById("Ulangisandi").value;
+        if (password !== confirmPassword) {
+          alert("Password tidak cocok!");
+          return false;
+        }
+        alert("Registrasi berhasil!");
+        return true;
+      }
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
